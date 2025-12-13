@@ -1,5 +1,5 @@
 # Configuration file with API keys
-.env
+
 config.js
 
 # Optional: If you want to keep a template
