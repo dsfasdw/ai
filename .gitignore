@@ -1,9 +1,9 @@
 # Configuration file with API keys
-
+.env
 config.js
 
 # Optional: If you want to keep a template
 # config.example.js
 
-
+#GROQ_API_KEY = "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"
 
