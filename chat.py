@@ -11,7 +11,7 @@ print("🤖 Groq API Chatbot")
 print("=" * 50)
 
 # Get API key from .env
-api_key = os.getenv("GROQ_API_KEY")
+#api_key = os.getenv("GROQ_API_KEY")
 
 if not api_key:
     print("❌ GROQ_API_KEY not found in .env file!")
