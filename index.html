@@ -132,51 +132,7 @@
         </div>
     </section>
 
-    <!-- Chatbot Section -->
-    <section id="chatbot" class="chatbot-section">
-        <div class="container">
-            <h2 class="section-title">AI Chatbot</h2>
-            <p class="section-subtitle">Interact with my AI-powered chatbot powered by Groq</p>
-            
-            <div class="chatbot-container">
-                <!-- Chatbot Interface -->
-                <div id="chatbotInterface" class="chatbot-interface">
-                    <!-- Model Selection -->
-                    <div class="model-selector">
-                        <label for="modelSelect">Select Model:</label>
-                        <select id="modelSelect">
-                            <option value="llama-3.1-8b-instant">Llama 3.1 8B (Fastest)</option>
-                            <option value="llama-3.3-70b-versatile">Llama 3.3 70B (Most Powerful)</option>
-                            <option value="llama-3.2-3b-preview">Llama 3.2 3B (Lightweight)</option>
-                            <option value="mixtral-8x7b-32768">Mixtral 8x7B (Great for Coding)</option>
-                            <option value="gemma2-9b-it">Gemma2 9B (Google's Model)</option>
-                        </select>
-                        <button id="clearChat" class="btn-clear"><i class="fas fa-trash"></i> Clear</button>
-                    </div>
-
-                    <!-- Chat Messages -->
-                    <div id="chatMessages" class="chat-messages">
-                        <div class="message bot-message">
-                            <div class="message-avatar">
-                                <i class="fas fa-robot"></i>
-                            </div>
-                            <div class="message-content">
-                                <p>Hello! I'm an AI assistant representing this portfolio. I can tell you about the portfolio owner's skills, projects, experience, and background. How can I help you today?</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Chat Input -->
-                    <div class="chat-input-container">
-                        <input type="text" id="chatInput" placeholder="Type your message here..." autocomplete="off">
-                        <button id="sendButton" class="btn-send">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
@@ -214,5 +170,14 @@
     <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
+
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "0437113a-f91a-4899-a534-b3a2a340a2fd",
+        apiHost: "https://cloud.flowiseai.com",
+    })
+</script>
+
 </html>
 
