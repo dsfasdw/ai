@@ -8,6 +8,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Login Modal -->
+    <div id="loginModal" class="login-modal">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+                <p id="loginError" class="error-msg"></p>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until login) -->
+    <div id="mainContent" style="display: none;">
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -167,8 +189,37 @@
         </div>
     </footer>
 
+    </div><!-- End mainContent -->
+
     <script src="config.js"></script>
     <script src="script.js"></script>
+    
+    <script>
+        // Static login credentials
+        const VALID_USERNAME = "admin";
+        const VALID_PASSWORD = "password123";
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('loginError');
+
+            if (username === VALID_USERNAME && password === VALID_PASSWORD) {
+                document.getElementById('loginModal').style.display = 'none';
+                document.getElementById('mainContent').style.display = 'block';
+                sessionStorage.setItem('loggedIn', 'true');
+            } else {
+                errorMsg.textContent = 'Invalid username or password';
+            }
+        });
+
+        // Check if already logged in
+        if (sessionStorage.getItem('loggedIn') === 'true') {
+            document.getElementById('loginModal').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        }
+    </script>
 </body>
 
 <script type="module">
